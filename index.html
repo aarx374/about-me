@@ -1,121 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="about me page">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="aarx, aaarx, aarx.me">
-    <meta name="author" content="aaarx">
-    <meta property="og:title" content="goat">
-    <meta property="og:description" content="about me page">
-    <meta property="og:image" content="https://i.redd.it/sn6p92gm6jt01.jpg">
-    <meta property="og:url" content="https://aarx.me">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="about me page" />
+    <meta name="keywords" content="aarx, aaarx, aarx.me" />
+    <meta name="author" content="aaarx" />
+    <meta property="og:title" content="goat" />
+    <meta property="og:description" content="about me page" />
+    <meta property="og:image" content="https://i.redd.it/sn6p92gm6jt01.jpg" />
+    <meta property="og:url" content="https://aarx.me" />
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
     <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-body {
-    background-color: #0c0b2b;
-}
+      body {
+        background-color: #0c0b2b;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
 
-.links {
-    list-style: none;
-    border: 3px double #8083b0;
-    height: 797px;
-    width: 550px;
-    margin-top: 60px;
-    padding: 0;
-    border-radius: 15px;
-}
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+      .links {
+        list-style: none;
+        border: 3px double #8083b0;
+        width: 550px;
+        margin-top: 60px;
+        padding: 0;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+      }
 
-li {
-    margin-left: 190px;
-    position: relative;
-    top: -64px;
-    font-family: 'Courier New';
-}
+      .pfp {
+        display: block;
+        height: 500px;
+        width: auto;
+        padding: 15px;
+        margin: 20px auto 30px auto; /* added top margin to move down */
+        position: relative;
+        top: 0;
+      }
 
-a {
-    color: white;
-    font-size: 28px;
-    text-decoration: none;
-    display: inline-block;
-}
+      p {
+        color: white;
+        font-size: 4vh;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin: -10px 0 -12px 0;
+        text-align: center;
+        padding-top: 5px;
+      }
 
-.pfp {
-    height: 500px;
-    width: auto;
-    padding: 15px;
-    margin-left: 38px;
-    position: relative;
-    top: -49px;
-}
+      .flag {
+        display: inline-block;
+        vertical-align: middle;
+        height: 48px;
+        margin-left: 8px;
+        position: relative;
+        top: -5px;
+      }
 
-img[src="faceit.png"],
-img[src="github.png"],
-img[src="valo.jpg"] {
-    height: 40px;
-    width: 40px;
-    margin-right: 7px;
-    position: relative;
-    left: -12px;
-    bottom: -8px;
-    margin-top: 7px;
-}
+      li {
+        font-family: "Courier New";
+        text-align: center;
+        margin: 20px 0;
+        padding: 0;
+      }
 
-p {
-    color: white;
-    font-size: 4vh;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-left: 196px;
-    position: relative;
-    top: -24px;
-    
-}
+      a {
+        color: white;
+        font-size: 28px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-span {
-    margin-left: 1800px;
-    position: relative;
-    top: 32px;
-    left: 30px;
-    color: white;
-    font-size: 25px;
-    opacity: 0.5;
-}
+      img.icon {
+        height: 40px;
+        width: 40px;
+        margin-right: 7px;
+        vertical-align: middle;
+      }
 
-.flag {
-    position: relative;
-    height: 48px;
-    left: 8px;
-    top: 13px;
-}
+      span {
+        display: none;
+      }
 
-@media only screen and (max-width: 768px) {
-            .container {
-                justify-content: flex-start;
-            }
+      @media only screen and (max-width: 768px) {
+        .container {
+          justify-content: center;
+          padding: 10px;
         }
 
+        .links {
+          width: 100%;
+          max-width: 550px;
+          height: auto;
+          margin-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        .pfp {
+          width: 100%;
+          height: auto;
+          max-height: 300px;
+          top: 0;
+          margin: 20px auto 20px auto; /* added top margin on mobile */
+        }
+
+        p {
+          font-size: 3vh;
+          padding-top: 5px;
+          margin: -5px 0 15px 0;
+        }
+
+        .flag {
+          top: -3px;
+        }
+
+        a {
+          font-size: 24px;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <ul class="links">
-            <p>aaarx <img class="flag" src="pl.png" alt="flag"></p>
-            <img class="pfp" src="pfp.png" alt="pfp">
-            <div>
-                <li><a href="https://www.faceit.com/en/players/NARYSSS" class="faceit"><img src="faceit.png" alt="faceit Icon">faceit</a></li>
-                <li><a href="https://tracker.gg/valorant/profile/riot/anita%20max%20wynn%23x73/overview?platform=pc&playlist=competitive" class="valorant"><img src="valo.jpg" alt="valorant Icon">valorant</a></li>
-                <li><a href="https://github.com/aarx374" class="github"><img src="github.png" alt="gitHub Icon">github</a></li>
-            </div>
-        </ul>
+      <ul class="links">
+        <li>
+          <p>aaarx <img class="flag" src="assets/pl.png" alt="flag" /></p>
+        </li>
+        <li>
+          <img class="pfp" src="assets/pfp.png" alt="pfp" />
+        </li>
+        <li>
+          <a href="https://www.faceit.com/en/players/NARYSSS" class="faceit">
+            <img class="icon" src="assets/faceit.png" alt="faceit Icon" />faceit
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://tracker.gg/valorant/profile/riot/anita%20max%20wynn%23x73/overview?platform=pc&playlist=competitive"
+            class="valorant"
+          >
+            <img
+              class="icon"
+              src="assets/valo.jpg"
+              alt="valorant Icon"
+            />valorant
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/aarx374" class="github">
+            <img class="icon" src="assets/github.png" alt="gitHub Icon" />github
+          </a>
+        </li>
+      </ul>
     </div>
-</body>
+  </body>
 </html>
 
